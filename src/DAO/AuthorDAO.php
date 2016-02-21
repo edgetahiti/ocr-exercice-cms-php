@@ -2,7 +2,7 @@
 
 namespace MyBooks\DAO;
 
-use MyBooks\Domain\Comment;
+use MyBooks\Domain\Author;
 
 class AuthorDAO extends DAO 
 {
@@ -16,11 +16,11 @@ class AuthorDAO extends DAO
     }
 
     /**
-     * Return a list of all comments for an Livre, sorted by date (most recent last).
+     * Return a list of all Authors for an Livre, sorted by date (most recent last).
      *
      * @param integer $LivreId The Livre id.
      *
-     * @return array A list of all comments for the Livre.
+     * @return array A list of all Authors for the Livre.
      */
     public function findAllByLivre($LivreId) {
         // The associated Livre is retrieved only once
@@ -47,10 +47,10 @@ class AuthorDAO extends DAO
      * Creates an Author object based on a DB row.
      *
      * @param array $row The DB row containing Author data.
-     * @return \MyBooks\Domain\Comment
+     * @return \MyBooks\Domain\Author
      */
     protected function buildDomainObject($row) {
-        $author = new Comment();
+        $author = new Author();
         $author->setId($row['author_id']);
         $author->setFirstName($row['auth_first_name']);
 		$author->setLastName($row['auth_last_name']);

@@ -8,7 +8,7 @@ $app->get('/', function () use ($app) {
 
 // Livre details with comments
 $app->get('/livre/{id}', function ($id) use ($app) {
-    $livres = $app['dao.livre']->find($id);
+    $livre = $app['dao.livre']->find($id);
     $authors = $app['dao.author']->findAllByLivre($id);
     return $app['twig']->render('livre.html.twig', array('livre' => $livre, 'authors' => $authors));
 })->bind('livre');
