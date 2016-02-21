@@ -15,11 +15,11 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 // Register services
-$app['dao.article'] = $app->share(function ($app) {
-    return new MyBooks\DAO\ArticleDAO($app['db']);
+$app['dao.livre'] = $app->share(function ($app) {
+    return new MyBooks\DAO\LivreDAO($app['db']);
 });
-$app['dao.comment'] = $app->share(function ($app) {
-    $commentDAO = new MyBooks\DAO\CommentDAO($app['db']);
-    $commentDAO->setArticleDAO($app['dao.article']);
-    return $commentDAO;
+$app['dao.author'] = $app->share(function ($app) {
+    $authorDAO = new MyBooks\DAO\AuthorDAO($app['db']);
+    $authorDAO->setArticleDAO($app['dao.author']);
+    return $authorDAO;
 });
