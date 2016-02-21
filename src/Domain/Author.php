@@ -2,7 +2,7 @@
 
 namespace MyBooks\Domain;
 
-class Comment 
+class Author 
 {
     /**
      * author id.
