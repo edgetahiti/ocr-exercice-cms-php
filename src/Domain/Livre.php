@@ -45,7 +45,7 @@ class Livre
         return $this->summary;
     }
 
-    public function setContent($summary) {
-        $this->content = $content;
+    public function setSummary($summary) {
+        $this->summary = $summary;
     }
 }
