@@ -34,7 +34,7 @@ class LivreDAO extends DAO
         $livre = new livre();
         $livre->setId($row['book_id']);
         $livre->setTitle($row['book_title']);
-        $livre->setContent($row['book_summary']);
+        $livre->setSummary($row['book_summary']);
         return $livre;
     }
 	 /**
