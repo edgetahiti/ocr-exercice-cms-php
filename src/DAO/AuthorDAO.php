@@ -4,7 +4,7 @@ namespace MyBooks\DAO;
 
 use MyBooks\Domain\Comment;
 
-class CommentDAO extends DAO 
+class AuthorDAO extends DAO 
 {
     /**
      * @var \MyBooks\DAO\LivreDAO
