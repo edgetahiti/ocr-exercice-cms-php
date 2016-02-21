@@ -20,6 +20,6 @@ $app['dao.livre'] = $app->share(function ($app) {
 });
 $app['dao.author'] = $app->share(function ($app) {
     $authorDAO = new MyBooks\DAO\AuthorDAO($app['db']);
-    $authorDAO->setArticleDAO($app['dao.author']);
+    $authorDAO->setLivreDAO($app['dao.livre']);
     return $authorDAO;
 });

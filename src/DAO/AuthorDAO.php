@@ -28,11 +28,11 @@ class AuthorDAO extends DAO
 
         // art_id is not selected by the SQL query
         // The Livre won't be retrieved during domain objet construction
-        $sql = "select auth.auth_id as author_id,auth_first_name,auth_last_name,book_isbn,book_summary from author auth inner join book bk on bk.auth_id = auth.auth_id where book_id=? order by auth_id";
+        $sql = "select auth.auth_id as author_id,auth_first_name,auth_last_name,book_isbn,book_summary from author auth inner join book bk on bk.auth_id = auth.auth_id where book_id=? order by auth.auth_id";
         $result = $this->getDb()->fetchAll($sql, array($LivreId));
 
         // Convert query result to an array of domain objects
-        $comments = array();
+        $authors = array();
         foreach ($result as $row) {
             $autId = $row['author_id'];
             $author = $this->buildDomainObject($row);
