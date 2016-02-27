@@ -5,12 +5,14 @@
 {% block content %}
 <p>
     <h2>{{ livre.title }}</h2>
-    <p>{{ livre.summary }}</p>
-    <h3>Comments</h3>
-    {% for author in authors %}
-        <strong>{{ author.FirstName }}</strong> said : {{ author.id }}<br>
+    <ul>
+	{% for author in authors %}
+        <li>Auteur : {{ author.FirstName }}</li>
+		<li>ISBN  : {{ author.ISBN }}</li>
     {% else %}
-        No comments yet.
+        
     {% endfor %}
+	</ul>
+	<p>{{ livre.summary }}</p>
 </p>
 {% endblock %}
